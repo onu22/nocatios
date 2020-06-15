@@ -11,9 +11,9 @@
 		2871CB542492DFA80066F798 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871CB532492DFA80066F798 /* SceneDelegate.swift */; };
 		2871CB562492DFA80066F798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871CB552492DFA80066F798 /* ViewController.swift */; };
 		2871CB592492DFA80066F798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2871CB572492DFA80066F798 /* Main.storyboard */; };
-		2871CB5C2492DFA80066F798 /* nocat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2871CB5A2492DFA80066F798 /* nocat.xcdatamodeld */; };
 		2871CB5E2492DFAA0066F798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2871CB5D2492DFAA0066F798 /* Assets.xcassets */; };
 		2871CB612492DFAA0066F798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2871CB5F2492DFAA0066F798 /* LaunchScreen.storyboard */; };
+		28A8775824982AA300015287 /* nocatModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28A8775624982AA300015287 /* nocatModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,10 @@
 		2871CB532492DFA80066F798 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2871CB552492DFA80066F798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2871CB582492DFA80066F798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2871CB5B2492DFA80066F798 /* nocat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nocat.xcdatamodel; sourceTree = "<group>"; };
 		2871CB5D2492DFAA0066F798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2871CB602492DFAA0066F798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2871CB622492DFAA0066F798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A8775724982AA300015287 /* nocatModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nocatModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +58,7 @@
 		2871CB502492DFA80066F798 /* nocat */ = {
 			isa = PBXGroup;
 			children = (
+				28A877512497BF4500015287 /* Misc */,
 				2871CB512492DFA80066F798 /* AppDelegate.swift */,
 				2871CB532492DFA80066F798 /* SceneDelegate.swift */,
 				2871CB552492DFA80066F798 /* ViewController.swift */,
@@ -65,9 +66,24 @@
 				2871CB5D2492DFAA0066F798 /* Assets.xcassets */,
 				2871CB5F2492DFAA0066F798 /* LaunchScreen.storyboard */,
 				2871CB622492DFAA0066F798 /* Info.plist */,
-				2871CB5A2492DFA80066F798 /* nocat.xcdatamodeld */,
 			);
 			path = nocat;
+			sourceTree = "<group>";
+		};
+		28A877512497BF4500015287 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				28A877522498293000015287 /* Core Data */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		28A877522498293000015287 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				28A8775624982AA300015287 /* nocatModel.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2871CB562492DFA80066F798 /* ViewController.swift in Sources */,
+				28A8775824982AA300015287 /* nocatModel.xcdatamodeld in Sources */,
 				2871CB522492DFA80066F798 /* AppDelegate.swift in Sources */,
 				2871CB542492DFA80066F798 /* SceneDelegate.swift in Sources */,
-				2871CB5C2492DFA80066F798 /* nocat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +307,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBWPX2U875;
 				INFOPLIST_FILE = nocat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBWPX2U875;
 				INFOPLIST_FILE = nocat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,13 +362,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2871CB5A2492DFA80066F798 /* nocat.xcdatamodeld */ = {
+		28A8775624982AA300015287 /* nocatModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2871CB5B2492DFA80066F798 /* nocat.xcdatamodel */,
+				28A8775724982AA300015287 /* nocatModel.xcdatamodel */,
 			);
-			currentVersion = 2871CB5B2492DFA80066F798 /* nocat.xcdatamodel */;
-			path = nocat.xcdatamodeld;
+			currentVersion = 28A8775724982AA300015287 /* nocatModel.xcdatamodel */;
+			path = nocatModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
