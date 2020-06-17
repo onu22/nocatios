@@ -43,6 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281BD0C12499E873006FE9E6 /* NocatTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NocatTests;
+			sourceTree = "<group>";
+		};
 		2871CB452492DFA80066F798 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +69,7 @@
 		2871CB502492DFA80066F798 /* nocat */ = {
 			isa = PBXGroup;
 			children = (
+				281BD0C12499E873006FE9E6 /* NocatTests */,
 				2871CB622492DFAA0066F798 /* Info.plist */,
 				28A8775D2499CED300015287 /* View Controllers */,
 				28A8775C2499CEC600015287 /* Views & Assets */,

@@ -12,7 +12,7 @@ import CoreData
 
 func createMainContext(completion: @escaping (NSPersistentContainer) -> Void) {
     
-    let container = NSPersistentContainer(name: "nocat")
+    let container = NSPersistentContainer(name: "nocatModel")
     
     // Happens asynchronously!
     container.loadPersistentStores(completionHandler: {
@@ -20,6 +20,8 @@ func createMainContext(completion: @escaping (NSPersistentContainer) -> Void) {
         guard error == nil else {
             fatalError("Failed to load store: \(String(describing: error))")
         }
+        
+        
         DispatchQueue.main.async {
             completion(container)
         }
