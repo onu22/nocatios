@@ -26,4 +26,8 @@ func createMainContext(completion: @escaping (NSPersistentContainer) -> Void) {
     })
 }
 
+protocol ManagedObjectContextDependentType {
+    var managedObjectContext: NSManagedObjectContext! { get set}
+}
+
 

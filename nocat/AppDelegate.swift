@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+     createMainContext {
+            container in            
+            let mainContext = container.viewContext
+            let dataService = DataService(managedObjectContext: mainContext)
+            dataService.seedUsers()
+        }
+        
         return true
     }
 
