@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate {
 
      // MARK: Outlets
     @IBOutlet weak var usersTableView: UITableView!
-    
+    @IBOutlet weak var myPickerView: UIPickerView!
+    let myPickerData = [String](arrayLiteral: "user1","user2","user3","user4")
     // MARK: Variables
       var feedUsers: [nocatUser] = []
     
@@ -41,10 +42,22 @@ class ViewController: UIViewController,UITableViewDataSource {
     @IBAction func refreshUsers(_ sender: Any) {
         view.backgroundColor = UIColor.red
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // TODO: GET a list of gists
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        myPickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let _:String = myPickerData[row]
         NetworkDataService.shared.getUsers { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -61,10 +74,14 @@ class ViewController: UIViewController,UITableViewDataSource {
                     print(error)
                 }
             }
-
         }
+        
     }
-
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        myPickerView.delegate = self
+    
+    }
 }
 
