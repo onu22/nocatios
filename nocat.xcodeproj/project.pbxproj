@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285EEC0E249A4DB3006DA528 /* NetworkDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EEC0D249A4DB3006DA528 /* NetworkDataService.swift */; };
+		285EEC11249A510E006DA528 /* nocatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EEC10249A510E006DA528 /* nocatUser.swift */; };
 		2871CB522492DFA80066F798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871CB512492DFA80066F798 /* AppDelegate.swift */; };
 		2871CB562492DFA80066F798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871CB552492DFA80066F798 /* ViewController.swift */; };
 		2871CB592492DFA80066F798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2871CB572492DFA80066F798 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		285EEC0D249A4DB3006DA528 /* NetworkDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataService.swift; sourceTree = "<group>"; };
+		285EEC10249A510E006DA528 /* nocatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nocatUser.swift; sourceTree = "<group>"; };
 		2871CB4E2492DFA80066F798 /* nocat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nocat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2871CB512492DFA80066F798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2871CB552492DFA80066F798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +54,13 @@
 			path = NocatTests;
 			sourceTree = "<group>";
 		};
+		285EEC0F249A50AD006DA528 /* NetworkModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkModel;
+			sourceTree = "<group>";
+		};
 		2871CB452492DFA80066F798 = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +80,8 @@
 		2871CB502492DFA80066F798 /* nocat */ = {
 			isa = PBXGroup;
 			children = (
+				285EEC10249A510E006DA528 /* nocatUser.swift */,
 				281BD0C12499E873006FE9E6 /* NocatTests */,
-				2871CB622492DFAA0066F798 /* Info.plist */,
 				28A8775D2499CED300015287 /* View Controllers */,
 				28A8775C2499CEC600015287 /* Views & Assets */,
 				28A8775B2499CEB700015287 /* Model */,
@@ -78,6 +89,8 @@
 				2871CB552492DFA80066F798 /* ViewController.swift */,
 				28A877592499CB0C00015287 /* CoreDataStack.swift */,
 				28A877602499D21A00015287 /* DataService.swift */,
+				285EEC0D249A4DB3006DA528 /* NetworkDataService.swift */,
+				2871CB622492DFAA0066F798 /* Info.plist */,
 			);
 			path = nocat;
 			sourceTree = "<group>";
@@ -85,6 +98,7 @@
 		28A8775B2499CEB700015287 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				285EEC0F249A50AD006DA528 /* NetworkModel */,
 				28A8775624982AA300015287 /* nocatModel.xcdatamodeld */,
 				28A8775E2499D0B700015287 /* Nocatuser.swift */,
 			);
@@ -182,6 +196,8 @@
 				2871CB562492DFA80066F798 /* ViewController.swift in Sources */,
 				28A8775824982AA300015287 /* nocatModel.xcdatamodeld in Sources */,
 				2871CB522492DFA80066F798 /* AppDelegate.swift in Sources */,
+				285EEC0E249A4DB3006DA528 /* NetworkDataService.swift in Sources */,
+				285EEC11249A510E006DA528 /* nocatUser.swift in Sources */,
 				28A877612499D21B00015287 /* DataService.swift in Sources */,
 				28A8775F2499D0B700015287 /* Nocatuser.swift in Sources */,
 				28A8775A2499CB0C00015287 /* CoreDataStack.swift in Sources */,

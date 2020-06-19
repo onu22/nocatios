@@ -10,15 +10,20 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource {
 
+     // MARK: Outlets
+    @IBOutlet weak var usersTableView: UITableView!
     
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-           cell.textLabel?.text = dailyTasks[indexPath.row]
-            return cell
-        }
+    // MARK: Variables
+      var feedUsers: [nocatUser] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           return dailyTasks.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        cell.textLabel?.text = dailyTasks[indexPath.row]
+        return cell
     }
     
     //Data source methods
@@ -39,6 +44,25 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // TODO: GET a list of gists
+        NetworkDataService.shared.getUsers { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let users):
+                    
+                    self.feedUsers = users
+                    self.usersTableView.reloadData()
+                    
+                    for user in users {
+                        print("\(user)\n")
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+
+        }
     }
 
 
