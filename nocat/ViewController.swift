@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  nocat
-//
-//  Created by Onuorah Nwachukwu on 11/06/2020.
-//  Copyright © 2020 Onuorah Nwachukwu. All rights reserved.
-//
 
 import UIKit
 
@@ -13,34 +6,19 @@ class ViewController: UIViewController,UITableViewDataSource,UIPickerViewDataSou
      // MARK: Outlets
     @IBOutlet weak var usersTableView: UITableView!
     @IBOutlet weak var myPickerView: UIPickerView!
-    let myPickerData = [String](arrayLiteral: "user1","user2","user3","user4")
     // MARK: Variables
       var feedUsers: [nocatUser] = []
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return dailyTasks.count
+        return self.feedUsers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell()
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        cell.textLabel?.text = dailyTasks[indexPath.row]
+        let currentUser = self.feedUsers[indexPath.row]
+        cell.textLabel?.text = currentUser.userName
+        cell.detailTextLabel?.text = currentUser.deviceId
         return cell
-    }
-    
-    //Data source methods
-       //  Create [String] arrays of tasks
-       let dailyTasks = ["windows",
-                         "doors",
-                         "boiler?",
-                         "mailbox",
-                         "containers",
-                         "pipes",
-                         "occurrences",]
-       
-         
-
-    @IBAction func refreshUsers(_ sender: Any) {
-        view.backgroundColor = UIColor.red
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,16 +26,25 @@ class ViewController: UIViewController,UITableViewDataSource,UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return myPickerData.count
+       
+        return  self.feedUsers.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        myPickerData[row]
+        //call updateLocation
+        //then call nearbys to fetch neighbours
+        self.feedUsers[row].userName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let _:String = myPickerData[row]
+        let _ :nocatUser = self.feedUsers[row]
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        myPickerView.delegate = self
         NetworkDataService.shared.getUsers { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -65,22 +52,12 @@ class ViewController: UIViewController,UITableViewDataSource,UIPickerViewDataSou
                     
                     self.feedUsers = users
                     self.usersTableView.reloadData()
-                    
-                    for user in users {
-                        print("\(user)\n")
-                    }
-                    
+                    self.myPickerView.reloadAllComponents()
                 case .failure(let error):
                     print(error)
                 }
             }
         }
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        myPickerView.delegate = self
     
     }
 }

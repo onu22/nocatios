@@ -26,15 +26,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PRq-3P-Eb2" userLabel="Users Table View">
-                                <rect key="frame" x="2" y="373" width="414" height="489"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PRq-3P-Eb2" userLabel="Users Table View">
+                                <rect key="frame" x="2" y="128" width="414" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="sTD-z1-6yD">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sTD-z1-6yD" id="NN9-oA-7SM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -44,19 +44,21 @@
                                 </connections>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-KO-Y1F">
-                                <rect key="frame" x="2" y="120" width="320" height="216"/>
+                                <rect key="frame" x="8" y="623" width="402" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="WVB-90-ALz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="09j-9b-agJ"/>
-                            <constraint firstItem="WVB-90-ALz" firstAttribute="leading" secondItem="bUN-KO-Y1F" secondAttribute="leading" id="J2u-wi-B65"/>
+                            <constraint firstItem="bUN-KO-Y1F" firstAttribute="centerX" secondItem="PRq-3P-Eb2" secondAttribute="centerX" id="En5-BE-7xH"/>
                             <constraint firstItem="PRq-3P-Eb2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="N4A-LO-KrO"/>
+                            <constraint firstItem="bUN-KO-Y1F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ReO-V3-ztX"/>
+                            <constraint firstItem="bUN-KO-Y1F" firstAttribute="centerX" secondItem="WVB-90-ALz" secondAttribute="centerX" id="ctv-JI-bRV"/>
                             <constraint firstItem="WVB-90-ALz" firstAttribute="trailing" secondItem="PRq-3P-Eb2" secondAttribute="trailing" id="dNx-n1-9z9"/>
+                            <constraint firstItem="PRq-3P-Eb2" firstAttribute="top" secondItem="WVB-90-ALz" secondAttribute="bottom" constant="8" id="efI-MC-AIL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WVB-90-ALz" secondAttribute="trailing" constant="-22" id="jEa-tU-tNd"/>
-                            <constraint firstItem="PRq-3P-Eb2" firstAttribute="leading" secondItem="bUN-KO-Y1F" secondAttribute="leading" id="vpy-Hm-j9k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bUN-KO-Y1F" secondAttribute="bottom" constant="23" id="mNw-FB-ljY"/>
                             <constraint firstItem="WVB-90-ALz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="zgz-cq-KfB"/>
-                            <constraint firstItem="bUN-KO-Y1F" firstAttribute="top" secondItem="WVB-90-ALz" secondAttribute="bottom" id="zz4-3r-Zcm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
