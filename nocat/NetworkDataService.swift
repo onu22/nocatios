@@ -40,7 +40,7 @@ class NetworkDataService {
         
     }
     
-    func getNeighbours(completion: @escaping (Result<[nocatUser], Error>) -> Void) {
+    func getNeighbours(user:nocatUser,completion: @escaping (Result<[nocatUser], Error>) -> Void) {
         
         let putComponents = createURLComponents(path: "/api/neigh/getall")
         guard let composedURL = putComponents.url else {
@@ -52,9 +52,6 @@ class NetworkDataService {
         putRequest.httpMethod = "PUT"
         putRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         putRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        let user = nocatUser(id: 1, deviceId: "1112", userName: "pmanonu 1",
-                                  latitude:43.650715,longitude:-79.377161)
-        
         do {
             let userData = try JSONEncoder().encode(user)
             putRequest.httpBody = userData

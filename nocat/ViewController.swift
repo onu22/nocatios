@@ -37,9 +37,10 @@ class ViewController: UIViewController,UITableViewDataSource,UIPickerViewDataSou
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let _ :nocatUser = self.feedUsers[row]
+        let userno :nocatUser = self.feedUsers[row]
+        
         //then call nearbys to fetch neighbours
-        NetworkDataService.shared.getNeighbours { (result) in
+        NetworkDataService.shared.getNeighbours(user: userno) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):
